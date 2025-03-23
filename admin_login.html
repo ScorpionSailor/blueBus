@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Admin Portal - BlueBus</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="z-10 flex justify-around text-black font-serif w-[100vw] fixed bg-white h-25 font1" style="animation: slideDown 0.8s ease-out;">
+            <!-- logo -->
+            <div class="flex flex-col justify-center">
+              <div class="w-25">
+                <img src="./images/logo.png" alt="" />
+              </div>
+              <div class="font-bold text-xl text-center text-[#0d2b47] jyu">blueBus</div>
+            </div>
+      
+            <ul class="flex items-center text-[22px] justify-evenly gap-10 text-[#0d2b47]">
+              <li class="h-[80%] flex items-center transition-all duration-200 cursor-pointer relative group">
+                <a href="index.html" class="flex items-center">
+                  Home
+                  <div class="w-full h-1 bg-[#0d2b47] transform scale-x-0 group-hover:scale-x-100 absolute bottom-0 top-14 origin-left transition-transform duration-200 rounded-2xl"></div>
+                </a>
+              </li>
+              <li class="h-[80%] flex items-center transition-all duration-200 cursor-pointer relative group">
+                <a href="about.html" class="flex items-center">
+                  About
+                  <div class="w-full h-1 bg-[#0d2b47] transform scale-x-0 group-hover:scale-x-100 absolute bottom-0 top-14 origin-left transition-transform duration-200 rounded-2xl"></div>
+                </a>
+              </li>
+              <li class="h-[80%] flex items-center transition-all duration-200 cursor-pointer relative group">
+                <a href="contact.html" class="flex items-center">
+                  Contact
+                  <div class="w-full h-1 bg-[#0d2b47] transform scale-x-0 group-hover:scale-x-100 absolute bottom-0 top-14 origin-left transition-transform duration-200 rounded-2xl"></div>
+                </a>
+              </li>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </ul>
+          </div>
+    </header>
+
+    <main class="auth-main">
+        <section class="white-space"></section>
+        
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="switchTab('login')">Login</button>
+                <button class="tab-btn" onclick="switchTab('signup')">Sign Up</button>
+            </div>
+
+            <div class="auth-forms">
+                <!-- Login Form -->
+                <form id="adminLoginForm" action="process_admin_login.php" method="POST" class="glass-form active">
+                    <div class="form-group">
+                        <label for="login-username">Username</label>
+                        <input type="text" id="login-username" name="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+
+                <!-- Signup Form -->
+                <form id="adminSignupForm" action="process_admin_signup.php" method="POST" class="glass-form">
+                    <div class="form-group">
+                        <label for="signup-username">Username</label>
+                        <input type="text" id="signup-username" name="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-confirm">Confirm Password</label>
+                        <input type="password" id="signup-confirm" name="confirm_password" required>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .font1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .auth-main {
+            background: linear-gradient(to bottom, #1a4b77, #0d2b47);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .white-space {
+            height: 100px;
+            background: white;
+        }
+
+        .auth-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .auth-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 0.5rem 2rem;
+            cursor: pointer;
+            position: relative;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #4cc18f;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .tab-btn.active {
+            opacity: 1;
+        }
+
+        .tab-btn.active::after {
+            transform: scaleX(1);
+        }
+
+        .glass-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            display: none;
+        }
+
+        .glass-form.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4cc18f;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4cc18f;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .submit-btn {
+            background: #4cc18f;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #3da77a;
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+
+    <script>
+        function switchTab(tab) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update forms
+            if (tab === 'login') {
+                document.getElementById('adminLoginForm').classList.add('active');
+                document.getElementById('adminSignupForm').classList.remove('active');
+            } else {
+                document.getElementById('adminLoginForm').classList.remove('active');
+                document.getElementById('adminSignupForm').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

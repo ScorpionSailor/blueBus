@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">   
+  <!-- Background gradient -->   
+  <rect x="0" y="0" width="1200" height="400" fill="#1a4b77"/>      
+  
+  <!-- Moon -->   
+  <circle cx="950" cy="120" r="60" fill="#e0e8f0"/>   
+  <circle cx="935" cy="110" r="10" fill="#1a4b77" opacity="0.2"/>   
+  <circle cx="970" cy="130" r="15" fill="#1a4b77" opacity="0.2"/>      
+  
+  <!-- Small clouds -->   
+  <path d="M150,120 Q170,100 190,120 Q210,100 230,120 Q210,140 190,120 Q170,140 150,120" fill="#2a5b87" opacity="0.6"/>   
+  <path d="M900,90 Q920,70 940,90 Q960,70 980,90 Q960,110 940,90 Q920,110 900,90" fill="#2a5b87" opacity="0.6"/>   
+  <path d="M500,140 Q520,120 540,140 Q560,120 580,140 Q560,160 540,140 Q520,160 500,140" fill="#2a5b87" opacity="0.6"/>      
+  
+  <!-- Road -->   
+  <path d="M0,350 C400,330 800,370 1200,350 L1200,400 L0,400 Z" fill="#0d2b47"/>   
+  <path d="M0,350 L1200,350" stroke="#3a6b97" stroke-width="2" stroke-dasharray="20,20"/>      
+  
+  <!-- Palm trees -->   
+  <g transform="translate(1050, 300)">     
+    <!-- Tree trunk -->     
+    <rect x="-5" y="-80" width="10" height="80" fill="#0a1f33"/>     
+    <!-- Tree leaves -->     
+    <path d="M0,-80 C-15,-90 -30,-85 -20,-100 C-40,-110 -30,-120 -15,-115 C-20,-130 -10,-140 0,-130 C10,-140 20,-130 15,-115 C30,-120 40,-110 20,-100 C30,-85 15,-90 0,-80" fill="#0a1f33"/>   
+  </g>   
+  <g transform="translate(1080, 320)">     
+    <!-- Tree trunk -->     
+    <rect x="-3" y="-50" width="6" height="50" fill="#0a1f33"/>     
+    <!-- Tree leaves -->     
+    <path d="M0,-50 C-10,-55 -20,-52 -12,-65 C-25,-70 -18,-80 -8,-75 C-12,-85 -5,-90 0,-85 C5,-90 12,-85 8,-75 C18,-80 25,-70 12,-65 C20,-52 10,-55 0,-50" fill="#0a1f33"/>   
+  </g>      
+  
+  <!-- Bus -->   
+  <g transform="translate(350, 350)">     
+    <!-- Bus body -->     
+    <rect x="0" y="-50" width="120" height="40" rx="5" fill="#0c3b6a"/>     
+    <rect x="5" y="-45" width="110" height="30" rx="3" fill="#1a4b77"/>     
+    <!-- Bus front -->     
+    <path d="M120,-50 L140,-40 L140,-10 L120,-10 Z" fill="#0c3b6a"/>     
+    <!-- Windows -->     
+    <rect x="10" y="-40" width="15" height="15" fill="#a0c8e0"/>     
+    <rect x="30" y="-40" width="15" height="15" fill="#a0c8e0"/>     
+    <rect x="50" y="-40" width="15" height="15" fill="#a0c8e0"/>     
+    <rect x="70" y="-40" width="15" height="15" fill="#a0c8e0"/>     
+    <rect x="90" y="-40" width="15" height="15" fill="#a0c8e0"/>     
+    <rect x="125" y="-35" width="10" height="10" fill="#a0c8e0"/>     
+    <!-- Lights -->     
+    <circle cx="135" cy="-35" r="3" fill="#f0f0a0"/>     
+    <circle cx="135" cy="-15" r="3" fill="#f06060"/>     
+    <!-- Wheels -->     
+    <circle cx="30" cy="-10" r="10" fill="#0a1f33"/>     
+    <circle cx="30" cy="-10" r="5" fill="#2a5b87"/>     
+    <circle cx="110" cy="-10" r="10" fill="#0a1f33"/>     
+    <circle cx="110" cy="-10" r="5" fill="#2a5b87"/>     
+    <!-- Highlight -->     
+    <path d="M0,-40 L120,-40 L140,-30 L140,-28 L120,-38 L0,-38 Z" fill="#3a6b97" opacity="0.5"/>   
+  </g>
+</svg>
